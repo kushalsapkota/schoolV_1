@@ -1,0 +1,9 @@
+
+{
+  "version": 2,
+  "public": true,
+  "name": "montessori-billing-system",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
