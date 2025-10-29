@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Montessori School Billing System",
+  "description": "A comprehensive billing and student management system for Montessori schools. It handles student registration, fee structures, monthly billing, payment tracking, and reporting, with an AI-powered summary feature.",
+  "requestFramePermissions": []
+}
