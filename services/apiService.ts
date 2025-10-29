@@ -1,35 +1,23 @@
+
 // ===================================================================================
 //
-//  CRITICAL: FIX THE "Failed to fetch" ERROR HERE
-//
-//  You must replace the placeholder URL below with the actual, live URL 
-//  of the `api.php` file on your hosting server.
-//
-//  EXAMPLE:
-//  If your website is `https://www.myschool.edu` and you uploaded `api.php` to a
-//  folder named `billing`, your URL would be:
-//  
-//  const API_BASE_URL = 'https://www.myschool.edu/billing/api.php';
+//  API URL Configuration
+//  This is now pointing to your live server.
 //
 // ===================================================================================
-const API_BASE_URL = 'http://your-domain.com/path/to/api.php';
+const API_BASE_URL = 'https://school.sapkotakushal.com.np/api.php';
 
 
 const get = async (action: string) => {
-    if (API_BASE_URL.includes('your-domain.com')) {
-        throw new Error('API URL is not configured. Please edit services/apiService.ts');
-    }
     const response = await fetch(`${API_BASE_URL}?action=${action}`);
     if (!response.ok) {
-        throw new Error(`Network response was not ok for action: ${action}`);
+        const errorText = await response.text();
+        throw new Error(`Network response was not ok for action: ${action}. Server response: ${errorText}`);
     }
     return response.json();
 }
 
 const post = async (action: string, data: any) => {
-    if (API_BASE_URL.includes('your-domain.com')) {
-        throw new Error('API URL is not configured. Please edit services/apiService.ts');
-    }
     const response = await fetch(`${API_BASE_URL}?action=${action}`, {
         method: 'POST',
         headers: {
